@@ -1,21 +1,21 @@
-void printEvenOddNumbers(int start, int end, int isEven) {
+#include <stdio.h>
 
-    if (start > end) {
+int main() {
 
-        return;
+    int data[5];
 
-    }
+    printf("Enter elements: ");
 
-    if (isEven && start % 2 == 0) {
+    for (int i = 0; i < 5; ++i)
 
-        printf("%d ", start);
+        scanf("%d", data + i);
 
-    } else if (!isEven && start % 2 != 0) {
+    printf("You entered: \n");
 
-        printf("%d ", start);
+    for (int i = 0; i < 5; ++i)
 
-    }
+        printf("%d\n", *(data + i));
 
-    printEvenOddNumbers(start + 1, end, isEven);
+    return 0;
 
 }

@@ -1,23 +1,67 @@
-int sumOfEvenOrOddNumbersInRange(int start, int end, int type) {
+#include <stdio.h>    
 
-    if (start > end) {
+ int main()    
 
-        return 0;
+{    
 
-    }
+    //Initialize array     
 
-    if (type == 0 && start % 2 == 0) {
+    int arr[] = {5, 2, 8, 7, 1};     
 
-        return start + sumOfEvenOrOddNumbersInRange(start + 2, end, type);
+    int temp = 0;    
 
-    }
+        
 
-    if (type == 1 && start % 2 != 0) {
+    //Calculate length of array arr    
 
-        return start + sumOfEvenOrOddNumbersInRange(start + 2, end, type);
+    int length = sizeof(arr)/sizeof(arr[0]);    
 
-    }
+        
 
-    return sumOfEvenOrOddNumbersInRange(start + 1, end, type);
+    //Displaying elements of original array    
+
+    printf("Elements of original array: \n");    
+
+    for (int i = 0; i < length; i++) {     
+
+        printf("%d ", arr[i]);     
+
+    }      
+
+        
+
+    //Sort the array in descending order    
+
+    for (int i = 0; i < length; i++) {     
+
+        for (int j = i+1; j < length; j++) {     
+
+           if(arr[i] < arr[j]) {    
+
+               temp = arr[i];    
+
+               arr[i] = arr[j];    
+
+               arr[j] = temp;    
+
+           }     
+
+        }     
+
+    }    
+
+    printf("\n");    
+
+    //Displaying elements of array after sorting    
+
+    printf("Elements of array sorted in descending order: \n");    
+
+    for (int i = 0; i < length; i++) {     
+
+        printf("%d ", arr[i]);    
+
+    }    
+
+    return 0;    
 
 }
